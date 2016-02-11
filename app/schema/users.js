@@ -21,12 +21,18 @@ userSchema.methods.comparePassword = function(attemptedPassword, callback) {
   });
 };
 
-userSchema.methods.hashPassword = function(){
+userSchema.methods.hashPassword = function() {
   var cipher = Promise.promisify(bcrypt.hash);
   return cipher(this.password, null, null).bind(this)
     .then(function(hash) {
       this.password = hash;
     });
 };
+
+userSchema.pre('save', function(next) {
+  this.hashPassword();
+  next();
+});
+
 
 module.exports = userSchema;
