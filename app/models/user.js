@@ -23,8 +23,9 @@
 // });
 
 var mongoose = require('mongoose');
-var schema = require('../config').userSchema;
+var userSchema = require('../schema/users.js');
 
 
-var User = mongoose.model('User', schema);
+var User = mongoose.model('User', userSchema);
+
 module.exports = User;

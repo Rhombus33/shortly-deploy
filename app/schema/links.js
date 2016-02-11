@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var crypto = require('crypto');
 
 var linkSchema = new mongoose.Schema({
   url: {
@@ -13,5 +14,6 @@ var linkSchema = new mongoose.Schema({
     type: Date
   }
 });
+
 
 module.exports = linkSchema;

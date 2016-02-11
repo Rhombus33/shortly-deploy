@@ -17,7 +17,7 @@
 // });
 
 var mongoose = require('mongoose');
-var schema = require('../app/config.js').linkSchema;
+var linkSchema = require('../schema/links.js');
 
-var Link = mongoose.model('Link', schema);
+var Link = mongoose.model('Link', linkSchema);
 module.exports = Link;
