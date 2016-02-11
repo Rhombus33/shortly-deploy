@@ -16,8 +16,8 @@
 //   }
 // });
 
-// var mongoose = require('mongoose');
-// var schema = require('../config');
+var mongoose = require('mongoose');
+var schema = require('../app/config.js').linkSchema;
 
-// var Link = mongoose.model('Link', schema.linkSchema);
-// module.exports = Link;
+var Link = mongoose.model('Link', schema);
+module.exports = Link;

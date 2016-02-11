@@ -22,8 +22,9 @@
 //   }
 // });
 
-// var mongoose = require('mongoose');
-// var schema = require('../config');
+var mongoose = require('mongoose');
+var schema = require('../config').userSchema;
 
-// var User = mongoose.model('User', schema.userSchema);
-// module.exports = User;
+
+var User = mongoose.model('User', schema);
+module.exports = User;
